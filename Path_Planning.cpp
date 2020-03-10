@@ -7,6 +7,8 @@ int main(){
 
 	Planner<int> g;
 	g.set_directed(true);
+
+	//// graph 1
 	// g.insert_edge(0, 1, 4);
 	// g.insert_edge(0, 7, 8);
 	// g.insert_edge(1, 2, 8);
@@ -14,6 +16,7 @@ int main(){
 	// g.insert_edge(2, 3, 7);
 	// g.insert_edge(2, 8, 2);
 
+	//// graph 2
 	// g.insert_edge(2, 5, 4); 
  //    g.insert_edge(3, 4, 9); 
  //    g.insert_edge(3, 5, 14); 
@@ -24,6 +27,7 @@ int main(){
  //    g.insert_edge(7, 8, 7); 
  //    g.insert_edge(9, 8, 7); 
 
+	//// graph 3
 	// g.insert_edge(1,2,1);
 	// g.insert_edge(1,3,3);
 	// g.insert_edge(1,4,2);
@@ -31,6 +35,7 @@ int main(){
 	// g.insert_edge(3,5,2);
 	// g.insert_edge(2,5,7);
 
+	//// graph 4
 	// g.insert_edge(1,2,-3);
 	// g.insert_edge(2,3,1);
 	// g.insert_edge(3,4,1);
@@ -43,7 +48,7 @@ int main(){
 	g.insert_edge(4,3,3);
 	g.insert_edge(3,2,-10);
 
-	// invalid Bellman Ford
+	// invalid Bellman Ford, contains negative edge
 	// g.insert_edge(1,2,4);
 	// g.insert_edge(1,4,5);
 	// g.insert_edge(4,3,3);
@@ -54,8 +59,10 @@ int main(){
 	// g.dijkstra(1);
 	g.bellman_ford(1);
 	
-	// Location start{1,1},end{4,4};
-	// g.a_star(4, 4, start, end);
+	// source and destination node
+	Location start{1,1},end{4,4};
+	// no. of rows, cols, start location, end location 
+	g.a_star(4, 4, start, end);
 
 	return 0;
 }
